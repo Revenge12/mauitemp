@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:$safeprojectname$.ViewModel"
+             x:Class="$safeprojectname$.Views.Login"
+             x:DataType="viewmodel:LoginViewModel"
+             Title="Login"
+             Shell.NavBarIsVisible="False">
+    <VerticalStackLayout Spacing="15"
+                         Padding="30,0"
+                         VerticalOptions="Center">
+        <Image Source="running.svg"
+        WidthRequest="150"/>
+        <VerticalStackLayout>
+            <Label Text="Welcome!"
+            HorizontalOptions="Center"
+            FontSize="Title"/>
+            <Label Text="Login to your account"
+            HorizontalOptions="Center"
+            FontSize="Subtitle"/>
+        </VerticalStackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Frame HasShadow="True"
+            HeightRequest="56"
+            WidthRequest="56"
+            ZIndex="1"
+            BorderColor="White"
+            CornerRadius="28">
+                <Image Source="user.png"
+                HeightRequest="20" 
+                WidthRequest="20"/>
+            </Frame>
+            <Frame HorizontalOptions="FillAndExpand"
+            Padding="0"
+            HeightRequest="45"
+            BackgroundColor="White"
+            HasShadow="True"
+            Margin="-20,0,0,0"
+            BorderColor="White">
+                <Entry Placeholder="Username"
+                       Text="{Binding User.Username}"
+                Margin="20,0,0,0"
+                VerticalOptions="Center"
+                Keyboard="Email"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame HasShadow="True"
+            HeightRequest="56"
+            WidthRequest="56"
+            ZIndex="1"
+            BorderColor="White"
+            CornerRadius="28">
+                <Image Source="padlock.png"
+                HeightRequest="20" 
+                WidthRequest="20"/>
+            </Frame>
+            <Frame HorizontalOptions="FillAndExpand"
+            Padding="0"
+            HeightRequest="45"
+            HasShadow="True"
+            Margin="-20,0,0,0"
+            BorderColor="White">
+                <Entry Placeholder="Password"
+                        Text="{Binding User.Password}"
+                        Margin="20,0,0,0"
+                        IsPassword="True"
+                        VerticalOptions="Center"/>
+            </Frame>
+
+        </StackLayout>
+        <VerticalStackLayout HorizontalOptions="Center">
+            <Label Text="Username or password is incorrect"
+                   TextColor="Red"
+                   IsVisible="{Binding ShowLoginError}"/>
+        </VerticalStackLayout>
+        <HorizontalStackLayout VerticalOptions="Center"
+                               HorizontalOptions="Center">
+
+            <Grid RowDefinitions="*,*"
+                  ColumnDefinitions="50,*">
+                <Label Text="Remember me!"
+                       TextColor="Black"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Margin="10"/>
+                <CheckBox Grid.Row="0" Grid.Column="0" Color="Black" Margin="-10" IsChecked="{Binding User.RememberMe}" />
+                <Button Text="Login"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Command="{Binding LoginCommand}"
+                        BorderColor="Goldenrod"
+                        BorderWidth="1"
+                        BackgroundColor="Transparent"
+                        TextColor="Black"/>
+            </Grid>
+
+
+
+        </HorizontalStackLayout>
+        <VerticalStackLayout HorizontalOptions="Center">
+            <Frame BackgroundColor="Azure"
+                HasShadow="True"
+                Padding="10">
+                <Label Text="{} Or register a new account"
+                       TextColor="Black"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer  />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,21 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+    <TemplateData>
+        <Name>Maui Template</Name>
+        <Description>This is a basic Maui template containing API</Description>
+        <Icon>Icon.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+    </TemplateData>
+  <TemplateContent>
+	<ProjectCollection>
+		<ProjectTemplateLink ProjectName="$safeprojectname$.Client">
+			Maui.Template\MyTemplate.vstemplate
+		</ProjectTemplateLink>
+		<ProjectTemplateLink ProjectName="$safeprojectname$.Server">
+			Server.Template\MyTemplate.vstemplate
+		</ProjectTemplateLink>
+		<ProjectTemplateLink ProjectName="$safeprojectname$.Shared">
+			Shared.Template\MyTemplate.vstemplate
+		</ProjectTemplateLink>
+	</ProjectCollection>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="$safeprojectname$.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:$safeprojectname$"
+    xmlns:views="clr-namespace:$safeprojectname$.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Not Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Shell.FlyoutItemIsVisible="False"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Loading"
+        ContentTemplate="{DataTemplate views:LoadingPage}"
+        Shell.NavBarIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False"
+        Route="LoadingPage" />
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate views:Login}"
+        Shell.FlyoutItemIsVisible="False"
+        Shell.NavBarIsVisible="False"
+        Route="Login" />
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:Home}"
+        Shell.NavBarIsVisible="True"
+        Shell.FlyoutBehavior="Flyout"
+        Route="Home" />
+
+    <ShellContent
+        Title="Logout"
+        ContentTemplate="{DataTemplate views:Logout}"
+        Shell.NavBarIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Route="Logout" />
+
+
+
+</Shell>

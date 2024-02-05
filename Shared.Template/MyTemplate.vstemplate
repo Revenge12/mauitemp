@@ -1,0 +1,33 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Shared.Template</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Shared.Template</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Shared.Template.csproj" File="Shared.Template.csproj" ReplaceParameters="true">
+      <Folder Name="AuthModels" TargetFolderName="AuthModels">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Registration.cs">Registration.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="UserDto.cs">UserDto.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Userstbl.cs">Userstbl.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Z_Database.txt">Z_Database.txt</ProjectItem>
+      </Folder>
+      <Folder Name="Database" TargetFolderName="Database">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Test.cs">Test.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Models" TargetFolderName="Models" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="GetRequest.cs">GetRequest.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ServiceResponse.cs">ServiceResponse.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
